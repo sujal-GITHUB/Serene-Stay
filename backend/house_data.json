@@ -1,0 +1,205 @@
+[
+  {
+    "author": "Jane Smith",
+    "status": "Completed",
+    "houseType": "Villa",
+    "privacyType": "Private",
+    "location": {
+      "country": "Canada",
+      "addressLineOne": "456 Maple Ave.",
+      "addressLineTwo": "Suite 100",
+      "city": "Toronto",
+      "state": "ON",
+      "postCode": "M5H 2N2"
+    },
+    "floorPlan": {
+      "guests": 8,
+      "bedrooms": 4,
+      "beds": 5,
+      "bathroomsNumber": 3
+    },
+    "amenities": [
+      "WiFi",
+      "Hot Tub",
+      "Fireplace",
+      "Outdoor BBQ",
+      "Parking"
+    ],
+    "photos": [
+      "villa1.jpg",
+      "villa2.jpg",
+      "villa3.jpg"
+    ],
+    "title": "Luxurious Villa with Ocean View",
+    "highlight": [
+      "Ocean view",
+      "Private garden",
+      "Close to beach"
+    ],
+    "description": "A spacious villa with stunning ocean views and a private garden. Ideal for a relaxing vacation with family or friends.",
+    "visibility": "Visible",
+    "guestType": "Family",
+    "priceAfterTaxes": 750,
+    "authorEarnedPrice": 650,
+    "basePrice": 500,
+    "security": [
+      "Security deposit of $500",
+      "No smoking inside"
+    ],
+    "ratings": 4.8,
+    "created_at": "2024-11-15T00:00:00Z",
+    "updated_at": "2024-11-15T00:00:00Z"
+  },
+  {
+    "author": "Alice Johnson",
+    "status": "In progress",
+    "houseType": "Condo",
+    "privacyType": "Shared",
+    "location": {
+      "country": "Australia",
+      "addressLineOne": "789 Ocean Dr.",
+      "addressLineTwo": "Unit 12",
+      "city": "Sydney",
+      "state": "NSW",
+      "postCode": "2000"
+    },
+    "floorPlan": {
+      "guests": 2,
+      "bedrooms": 1,
+      "beds": 1,
+      "bathroomsNumber": 1
+    },
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Pool",
+      "24/7 Security",
+      "Elevator"
+    ],
+    "photos": [
+      "condo1.jpg",
+      "condo2.jpg",
+      "condo3.jpg"
+    ],
+    "title": "Modern Condo in Sydney",
+    "highlight": [
+      "City center location",
+      "Great for business travelers",
+      "Affordable pricing"
+    ],
+    "description": "A modern, affordable condo located in the heart of Sydney. Perfect for short stays and business trips.",
+    "visibility": "Visible",
+    "guestType": "Business",
+    "priceAfterTaxes": 150,
+    "authorEarnedPrice": 120,
+    "basePrice": 100,
+    "security": [
+      "No pets allowed",
+      "Quiet hours after 10 PM"
+    ],
+    "ratings": 4.2,
+    "created_at": "2024-11-14T00:00:00Z",
+    "updated_at": "2024-11-14T00:00:00Z"
+  },
+  {
+    "author": "Bob Green",
+    "status": "Completed",
+    "houseType": "Cottage",
+    "privacyType": "Private",
+    "location": {
+      "country": "UK",
+      "addressLineOne": "123 Birchwood Lane",
+      "addressLineTwo": "N/A",
+      "city": "Edinburgh",
+      "state": "Scotland",
+      "postCode": "EH1 2NH"
+    },
+    "floorPlan": {
+      "guests": 6,
+      "bedrooms": 3,
+      "beds": 4,
+      "bathroomsNumber": 2
+    },
+    "amenities": [
+      "WiFi",
+      "Fireplace",
+      "Garden",
+      "Pet-friendly",
+      "Barbecue"
+    ],
+    "photos": [
+      "cottage1.jpg",
+      "cottage2.jpg",
+      "cottage3.jpg"
+    ],
+    "title": "Charming Cottage in the Countryside",
+    "highlight": [
+      "Pet-friendly",
+      "Private garden",
+      "Close to hiking trails"
+    ],
+    "description": "A cozy countryside cottage, ideal for nature lovers and families with pets. Enjoy a peaceful getaway with beautiful scenery.",
+    "visibility": "Visible",
+    "guestType": "Family",
+    "priceAfterTaxes": 200,
+    "authorEarnedPrice": 180,
+    "basePrice": 150,
+    "security": [
+      "Pets allowed with deposit",
+      "No parties or events"
+    ],
+    "ratings": 4.7,
+    "created_at": "2024-11-13T00:00:00Z",
+    "updated_at": "2024-11-13T00:00:00Z"
+  },
+  {
+    "author": "Samantha Blue",
+    "status": "In progress",
+    "houseType": "Townhouse",
+    "privacyType": "Shared",
+    "location": {
+      "country": "USA",
+      "addressLineOne": "321 Pine St.",
+      "addressLineTwo": "Unit 5",
+      "city": "Los Angeles",
+      "state": "CA",
+      "postCode": "90001"
+    },
+    "floorPlan": {
+      "guests": 4,
+      "bedrooms": 2,
+      "beds": 3,
+      "bathroomsNumber": 2
+    },
+    "amenities": [
+      "WiFi",
+      "Smart TV",
+      "Dishwasher",
+      "Private balcony",
+      "Parking"
+    ],
+    "photos": [
+      "townhouse1.jpg",
+      "townhouse2.jpg"
+    ],
+    "title": "Cozy Townhouse near Downtown LA",
+    "highlight": [
+      "Central location",
+      "Perfect for small families",
+      "Affordable"
+    ],
+    "description": "A cozy townhouse close to downtown Los Angeles. Ideal for small families or groups looking for a comfortable stay.",
+    "visibility": "Visible",
+    "guestType": "Family",
+    "priceAfterTaxes": 220,
+    "authorEarnedPrice": 190,
+    "basePrice": 170,
+    "security": [
+      "No loud noises",
+      "Deposit required"
+    ],
+    "ratings": 4.6,
+    "created_at": "2024-11-12T00:00:00Z",
+    "updated_at": "2024-11-12T00:00:00Z"
+  }
+]
