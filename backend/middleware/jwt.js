@@ -7,7 +7,7 @@ exports.verifyJwtToken = async (req, res, next) => {
     // console.log(token, "LINE 7 JWT");
 
     if (!token) {
-        return res.send("token is not valid");
+        return res.send("Invalid Token");
     }
     try {
         let decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);

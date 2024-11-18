@@ -16,7 +16,7 @@ exports.saveHouseStructure = async (req, res) => {
         const userDetails = await User.findById(findCriteria);
         console.log(userDetails)
         if (userDetails.role !== "host") {
-            throw Error("User is not a host")
+            throw Error("User not a host")
         }
 
         let houseTypeData = {
@@ -33,7 +33,7 @@ exports.saveHouseStructure = async (req, res) => {
             let response = {
                 status: 200,
                 succeed: 1,
-                info: "Successfully housedata updated",
+                info: "Housedata successfully updated",
                 houseDetails
             }
 
@@ -69,7 +69,7 @@ exports.savePrivacyType = async (req, res) => {
             let response = {
                 status: 200,
                 succeed: 1,
-                info: "Successfully housedata updated",
+                info: "Housedata successfully updated",
                 houseDetails
             }
 
@@ -79,6 +79,7 @@ exports.savePrivacyType = async (req, res) => {
         console.log(error)
     }
 }
+
 exports.saveLocation = async (req, res) => {
     try {
         const payload = req.body;
@@ -101,7 +102,7 @@ exports.saveLocation = async (req, res) => {
             let response = {
                 status: 200,
                 succeed: 1,
-                info: "Successfully housedata updated",
+                info: "Housedata successfully updated",
                 houseDetails
             }
 
@@ -136,7 +137,7 @@ exports.saveFloorPlan = async (req, res) => {
             let response = {
                 status: 200,
                 succeed: 1,
-                info: "Successfully housedata updated",
+                info: "Housedata successfully updated",
                 houseDetails
             }
 
@@ -169,7 +170,7 @@ exports.saveAmenities = async (req, res) => {
             let response = {
                 status: 200,
                 succeed: 1,
-                info: "Successfully housedata updated",
+                info: "Housedata successfully updated",
                 houseDetails
             }
 
@@ -205,19 +206,17 @@ exports.savePhotos = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
         res.status(200).send(response)
-
         // console.log(houseDetails, "line 211")
 
     } catch (error) {
         console.log(error)
     }
 }
-
 
 exports.saveTitle = async (req, res) => {
     try {
@@ -240,7 +239,7 @@ exports.saveTitle = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -274,7 +273,7 @@ exports.saveHighlight = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -308,7 +307,7 @@ exports.saveDescription = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -342,7 +341,7 @@ exports.saveGuestType = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -381,7 +380,7 @@ exports.savePrices = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -415,7 +414,7 @@ exports.saveSecurity = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -442,7 +441,7 @@ exports.getHouseDetails = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -454,7 +453,6 @@ exports.getHouseDetails = async (req, res) => {
         console.log(error)
     }
 }
-
 
 exports.publishList = async (req, res) => {
     try {
@@ -476,7 +474,7 @@ exports.publishList = async (req, res) => {
         let response = {
             status: 200,
             succeed: 1,
-            info: "Successfully housedata updated",
+            info: "Housedata successfully updated",
             houseDetails
         }
 
@@ -507,7 +505,6 @@ exports.getAllListing = async (req, res) => {
         console.log(error)
     }
 }
-
 
 exports.getListingDataWithCat = async (req, res) => {
     try {

@@ -61,7 +61,7 @@ const DashboardMenu = () => {
                     <Link
                       className={`text-sm font-medium ${
                         activePage === item.id
-                          ? "font-medium text-[#ff3f62ff] hover:bg-white transition duration-200"
+                          ? "font-medium text-[#0038d3] hover:bg-white transition duration-200"
                           : " opacity-80"
                       }`}
                       to={`${
@@ -97,7 +97,7 @@ const DashboardMenu = () => {
                 <p
                   className={` cursor-pointer p-2 text-sm whitespace-nowrap rounded-full hover:bg-[#f0f0f0] transition duration-300 ${
                     activePage === item.id
-                      ? "font-medium text-[#ff3f62ff] hover:bg-white transition duration-200"
+                      ? "font-medium text-[#ffffff] hover:bg-white transition duration-200"
                       : " opacity-80"
                   }`}
                   onClick={() => {

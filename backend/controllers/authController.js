@@ -13,13 +13,13 @@ exports.signUp = async (req, res, next) => {
     try {
         const payload = req.body;
         if (!payload.name) {
-            throw new Error("Please provide user name");
+            throw new Error("Enter user name");
         }
         if (!payload.emailId) {
-            throw new Error("Please provide email id");
+            throw new Error("Enter email id");
         }
         if (!payload.birthDate) {
-            throw new Error("Please provide date of birth");
+            throw new Error("Enter date of birth");
         }
 
         const passwordHash = await bcrypt.hash(payload.password, saltRounds)
@@ -53,7 +53,7 @@ exports.signUp = async (req, res, next) => {
         const updatedUser = await User.findOneAndUpdate(findCriteria, { accessToken: accessToken, refreshToken: refreshToken }, { new: true })
 
         let response = {
-            info: "Welcome to motel",
+            info: "Nice to meet you at Serene Stay",
             success: 1,
             status: 200,
             accessToken: accessToken,
@@ -97,7 +97,7 @@ exports.logIn = async (req, res) => {
 
             const updatedUser = await User.findOneAndUpdate(findCriteria, { accessToken: accessToken, refreshToken: refreshToken }, { new: true })
             let response = {
-                info: "Successfully logged in",
+                info: "Login successful",
                 success: 1,
                 status: 200,
                 accessToken: accessToken,
@@ -112,7 +112,7 @@ exports.logIn = async (req, res) => {
             }
             res.send(response)
         } else {
-            res.send("Not allowed!")
+            res.send("Login unsuccessful")
         }
     } catch (error) {
         res.status(500).send()
@@ -180,7 +180,7 @@ exports.logOut = async (req, res) => {
                 }
             }
         )
-        res.send("User logout")
+        res.send("User has been logged out")
     } catch (error) {
         console.log(error, "Logout error")
     }
@@ -198,7 +198,7 @@ exports.getUserDetails = async (req, res) => {
         const housesData = await House.find({ author: userId })
 
         let response = {
-            info: "user exists",
+            info: "user already exists",
             status: 200,
             success: 1,
             user_details: userDetails,
@@ -222,13 +222,13 @@ exports.checkEmail = async (req, res) => {
         let response;
         if (isEmailExist.length !== 0) {
             response = {
-                info: "User email exist.",
+                info: "User email exists",
                 success: 1,
                 status: 200
             }
         } else {
             response = {
-                info: "User email doesn't exist.",
+                info: "User email doesn't exist",
                 success: 0,
                 status: 200
             }
@@ -264,8 +264,7 @@ exports.userProfileDetails = async (req, res) => {
 
                 // Save the updated user details
                 await userDetails.save();
-
-                // console.log("Field updated successfully");
+                console.log("Field updated successfully");
             } else {
                 console.log("Field not found");
             }
@@ -329,7 +328,7 @@ exports.uploadProfileImage = async (req, res) => {
         const userDetails = await User.findOneAndUpdate(findCriteria, { profileImg: profileImg }, { new: true });
 
         let response = {
-            info: "Successfully uploded",
+            info: "Image uploaded successfully",
             profileImg: userDetails.profileImg
         }
         res.status(200).send(response)

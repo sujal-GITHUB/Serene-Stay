@@ -79,8 +79,8 @@ const Home = () => {
   return (
     <main className="max-w-screen-2xl xl:px-10 px-5 sm:px-16 mx-auto">
       <section
-        className={` pt-8 grid md:grid-cols-12 gap-5 bg-white sticky top-16 z-30 ${
-          hasScroll ? " shadow" : " shadow-none"
+        className={` pt-8 grid md:grid-cols-12 gap-5 pb-5 bg-lightLightBlue dark:bg-darkLightBlue sticky top-16 z-30 ${
+          hasScroll ? " shadow-none" : " shadow-none"
         }`}
       >
         {/* categories */}
@@ -88,7 +88,7 @@ const Home = () => {
         {/* taxes toggle card */}
         <PriceWithTaxCard
           style={
-            " md:col-span-4 lg:col-span-3 border-[#e2e2e2] border rounded-xl h-14 md:flex justify-around items-center hidden"
+            " md:col-span-4 lg:col-span-3 h-14 md:flex justify-center items-center hidden"
           }
           setShowBeforeTaxPrice={setShowBeforeTaxPrice}
         />

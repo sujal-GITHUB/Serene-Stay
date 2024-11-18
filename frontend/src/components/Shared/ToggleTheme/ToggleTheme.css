@@ -1,0 +1,89 @@
+:root {
+  /* Theme Colors */
+  --darkbg: #251d29;
+  --darkt: #ffd1f7;
+  --lightbg: #ffffff;
+  --lightt: #d43370;
+
+  /* Toggle Dimensions */
+  --toggleHeight: 4em; /* Reduced toggle height */
+  --toggleWidth: 6em; /* Reduced toggle width */
+  --toggleBtnRadius: 1.2em; /* Reduced size of the moon/sun */
+
+  /* Day/Night Colors */
+  --bgColor--night: #423966;
+  --toggleBtn-bgColor--night: var(--bgColor--night);
+  --mooncolor: #ffffff;
+  --bgColor--day: #ffffff;
+  --toggleBtn-bgColor--day: var(--bgColor--day);
+}
+
+/* Global Styles */
+body {
+  transition: all 0.2s ease-in-out;
+  background: var(--darkbg);
+  color: var(--darkt);
+  text-align: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Light Mode */
+body.light-mode {
+  background: var(--lightbg);
+  color: var(--lightt);
+}
+
+/* Main Toggle Styling */
+.tdnn {
+  margin: 0 auto; /* Adjusted margin to fit reduced toggle size */
+  position: relative;
+  height: var(--toggleHeight); /* Adjusted height */
+  width: var(--toggleWidth); /* Adjusted width */
+  border-radius: var(--toggleHeight); /* Maintain rounded edges */
+  transition: all 500ms ease-in-out;
+  background: var(--bgColor--night);
+  cursor: pointer;
+}
+
+.tdnn.day {
+  background: #ffbf71;
+}
+
+/* Moon Styling */
+.moon {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+
+  /* Adjusted position and size for smaller moon */
+  top: 0.3em;
+  left: 0.55em;
+  transform: rotate(-75deg);
+  width: var(--toggleBtnRadius); /* Adjusted moon size */
+  height: var(--toggleBtnRadius); /* Adjusted moon size */
+  background: var(--bgColor--night);
+  box-shadow:
+    0.5em 0.4em 0 0em var(--mooncolor) inset,
+    rgba(255, 255, 255, 0.1) 0em -1.5em 0 -0.9em,
+    rgba(255, 255, 255, 0.1) 1em 2em 0 -0.9em,
+    rgba(255, 255, 255, 0.1) 0.8em 3em 0 -0.8em;
+}
+
+/* Sun Styling */
+.sun {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+
+  /* Adjusted position and size for sun */
+  top: 0.3em;
+  left: 1.3em; /* Adjusted position to fit the new size */
+  transform: rotate(0deg);
+  width: 1.2em; /* Reduced sun size */
+  height: 1.2em; /* Reduced sun size */
+  background: #fff;
+}
+

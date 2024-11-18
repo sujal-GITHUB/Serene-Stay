@@ -20,19 +20,19 @@ exports.createPaymentIntent = async (req, res) => {
         console.log(payload);
 
         const paymentIntent = await stripe.paymentIntents.create({
-            description: 'Journey Cuisine Holel APP',
+            description: 'Serene Stay',
             shipping: {
-                name: 'Sk Mirajul Islam',
+                name: 'Sujal Kumar',
                 address: {
-                    line1: '510 Townsend St',
-                    postal_code: '98140',
-                    city: 'San Francisco',
-                    state: 'CA',
-                    country: 'US',
+                    line1: 'NIT Jalandhar',
+                    postal_code: '144027',
+                    city: 'Jalandhar',
+                    state: 'Punjab',
+                    country: 'India',
                 },
             },
             amount: 1099,
-            currency: 'usd',
+            currency: 'inr',
             payment_method_types: ['card'],
         });
 
@@ -48,7 +48,6 @@ exports.createPaymentIntent = async (req, res) => {
         });
     }
 };
-
 // save new reservation 
 exports.newReservation = async (req, res) => {
     try {

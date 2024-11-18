@@ -4,8 +4,14 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        lightLightBlue: '#CAF0F8',  
+        lightDarkBlue: '#00B4D8', 
+        darkLightBlue: '#7AB2D3',
+        darkDarkBlue: '#4A628A'},
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },

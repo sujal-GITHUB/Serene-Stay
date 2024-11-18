@@ -4,7 +4,7 @@ import linkedinIcon from "../../assets/basicIcon/linkedinIcon.svg";
 
 const Footer = () => {
   return (
-    <footer className=" py-12 bg-[#f7f7f7] border-t border-[#dddddd] text-sm text-[#222222] relative bottom-0 z-[20]">
+    <footer className=" py-12  bg-lightDarkBlue  rounded-tr-3xl rounded-tl-3xl mx-5 border-t border-[#dddddd] text-sm text-[#000000] relative bottom-0 z-[20]">
       <section className=" grid grid-cols-2 md:grid-cols-4 gap-8 justify-between max-w-screen-2xl mx-auto px-10">
         <div className="flex flex-col gap-4 opacity-80">
           <h6 className="font-semibold">Support</h6>

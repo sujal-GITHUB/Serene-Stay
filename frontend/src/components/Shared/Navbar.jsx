@@ -5,10 +5,12 @@ import AuthenticationPopUp from "../popUp/authentication/AuthenticationPopUp";
 import MiniNavbar from "./DashboardMenu";
 import { getUser, userLogOut } from "../../redux/actions/userActions";
 import hamburgerMenu from "../../assets/basicIcon/hamburgerMenu.svg";
-import motelLogo from "../../assets/Travel_Logo.png";
+import logo from "../../assets/logo_dark.png";
 import userProfile from "../../assets/basicIcon/user-profile.png";
-import house from "../../assets/basicIcon/houseWhite.png";
+import house from "../../assets/basicIcon/house.png";
 import toast from "react-hot-toast";
+import toggle from './ToggleTheme/ToggleTheme'
+import ToggleTheme from "./ToggleTheme/ToggleTheme";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.userDetails);
@@ -62,7 +64,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`border-b-[1.4px] border-[#f1f1f1] sticky top-0 z-[99] bg-white ${
+      className={`border-b-[1.4px] rounded-br-3xl rounded-bl-3xl mx-5 border-[#f1f1f1] sticky top-0 z-[99] bg-lightDarkBlue ${
         inBookingPage && "hidden md:block"
       }`}
     >
@@ -87,9 +89,9 @@ const Navbar = () => {
         <div className=" md:w-[160px]">
           <span className="flex flex-row gap-2 items-center max-w-[120px]">
             <img
-              src={motelLogo}
+              src={logo}
               alt="Logo"
-              className=" w-10 cursor-pointer"
+              className=" w-[70px] cursor-pointer"
               onClick={() => {
                 // setting cat to house for listing data fetching
                 JSON.stringify(localStorage.setItem("category", "House"));
@@ -99,10 +101,11 @@ const Navbar = () => {
             />
             {/* if user is in hosting homes page we want only logo */}
             {inHostHomesLandingPage || isSmallDevice ? null : (
-              <p className="text-xl text-[#ff385c] font-bold">motel</p>
+              <p className="text-l text-[#ffffff] font-medium">Serene Stay</p>
             )}
           </span>
         </div>
+
         {/* if not in the booking page then show the options 👇 */}
         {inBookingPage ? (
           <div> </div>
@@ -117,6 +120,7 @@ const Navbar = () => {
             )}
           </>
         )}
+
         {/* if in the booking page don't show any option 👇  */}
         {inBookingPage ? (
           <div> </div>
@@ -125,18 +129,17 @@ const Navbar = () => {
             {/* if user is in the hosting house landing page we want to show different button */}
             {inHostHomesLandingPage ? (
               <div className=" flex flex-row items-center justify-between gap-4">
-                <p className=" text-[#222222] text-sm font-medium hidden sm:block">
-                  Ready to Motel it?
-                </p>
+                {/* Toggle for dark mode */}
+                <ToggleTheme/>
                 <div
                   onClick={() => {
                     isUserExist();
                   }}
-                  className=" flex flex-row justify-between items-center gap-2 bg-[#ff385c] hover:bg-[#d90b63] transition-all duration-300 px-3 py-2 rounded-lg"
+                  className=" flex cursor-pointer flex-row justify-between items-center gap-2 bg-white hover:bg-lightLightBlue transition-all duration-300 px-3 py-2 rounded-lg"
                 >
                   <img src={house} alt="House setup" className=" w-4 md:w-5" />
-                  <p className=" font-semibold text-sm md:text-base text-white">
-                    Motel setup
+                  <p className=" font-semibold text-sm md:text-base text-black">
+                    Set up your Hotel
                   </p>
                 </div>
               </div>
@@ -144,13 +147,15 @@ const Navbar = () => {
               <>
                 {/* user bar */}
                 <div className="flex justify-end items-center">
+                  <div className="flex justify-end items-center gap-2">
+                    <ToggleTheme/>
                   {!inUserDashboard && (
                     <Link
                       to="/host/homes"
-                      className=" bg-[#ffffff] hover:bg-[#f0f0f0] transition-all rounded-full p-3 cursor-pointer mr-3 md:block hidden"
+                      className=" bg-[#ffffff] hover:bg-[#f0f0f0] transition-all rounded-full p-3 px-5 cursor-pointer mr-3 md:block hidden"
                     >
                       <p className="text-sm font-medium text-[#222222]">
-                        Motel your home
+                        Host your Hotel
                       </p>
                     </Link>
                   )}
@@ -206,7 +211,7 @@ const Navbar = () => {
                             Login
                           </Link>
                           <hr className="h-[1.5px] bg-[#dddddd] my-1" />
-                          <Link to={"/host/homes"}>Motel your home</Link>
+                          <Link to={"/host/homes"}>Host your Hotel</Link>
                           <Link>Help</Link>
                         </div>
                       ) : (
@@ -244,7 +249,7 @@ const Navbar = () => {
                           <Link className="font-medium">Trips</Link>
                           <Link className="font-medium">Wishlists</Link>
                           <hr className="h-[1.5px] bg-[#dddddd] my-1" />
-                          <Link to={"/host/homes"}>Motel your home</Link>
+                          <Link to={"/host/homes"}>Host your hotel</Link>
                           <Link to={`/users/show/${user._id}`}>Account</Link>
                           <hr className="h-[1.5px] bg-[#dddddd] my-1" />
                           <Link>Help</Link>
@@ -259,9 +264,12 @@ const Navbar = () => {
                       )}
                     </>
                   ) : null}
+                  </div>
                 </div>
               </>
             )}
+
+            
           </>
         )}
       </div>

@@ -5,17 +5,27 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
-}
-p {
-  color: #222222;
+  background-color: #CAF0F8; /* Light mode background */
+  color: #222222; /* Light mode text color */
 }
 
+/* Dark Mode */
+html.dark body {
+  background-color: #7AB2D3; /* Dark mode background */
+  color: #E0E0E0; /* Dark mode text color */
+}
+
+p {
+  color: inherit; /* Ensure text uses the body color */
+}
+
+/* Leaflet Styles */
 .leaflet-bottom,
 .leaflet-control,
 .leaflet-pane,
@@ -23,6 +33,7 @@ p {
   z-index: 0 !important;
 }
 
+/* Screen Lock */
 .screen__lock {
   overflow: hidden;
 }
