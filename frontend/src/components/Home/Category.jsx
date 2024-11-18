@@ -76,15 +76,22 @@ const myArrow = ({ type, onClick, isEdge }) => {
     ) : (
       <MdKeyboardArrowRight size={18} />
     );
+
   return (
     <button
-      className=" p-1 rounded-full border-neutral-400 border bg-white flex items-center max-h-[32px] my-auto hover:shadow-lg mb-6"
+      className="p-1 rounded-full border border-gray-400 bg-white flex items-center max-h-[32px] my-auto hover:shadow-lg mb-6"
       onClick={onClick}
       disabled={isEdge}
+      style={{
+        color: "#222222", // Fixed color
+        cursor: isEdge ? "not-allowed" : "pointer",
+        opacity: isEdge ? 0.5 : 1,
+      }}
     >
       {pointer}
     </button>
   );
 };
+
 
 export default Category;

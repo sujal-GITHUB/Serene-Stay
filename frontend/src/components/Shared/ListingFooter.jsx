@@ -228,12 +228,12 @@ URL. */
   }, [progress, url]);
 
   return (
-    <footer className=" sticky bottom-0 bg-white">
+    <footer className=" sticky bottom-0 bg-lightLightBlue dark:bg-darkDarkBlue rounded-tr-3xl  rounded-tl-3xl mx-5">
       {/* progressbar */}
       {!url.includes("/published") && (
-        <div>
+        <div className="rounded-tr-3xl rounded-tl-3xl pt-5 mb-5">
           <progress
-            className="progress w-full shadow-sm transition-all duration-700"
+            className="progress bg-white w-full shadow-sm transition-all duration-700"
             value={progress}
             max="100"
           ></progress>
@@ -241,11 +241,11 @@ URL. */
       )}
 
       {/* button */}
-      <div className=" flex justify-between py-4 px-6 sm:px-10 md:px-20 top-0 z-10 bg-white max-w-screen-xl xl:px-20 xl:mx-auto">
+      <div className=" flex justify-between py-4 px-6 sm:px-10 md:px-20 rounded-tl-3xl rounded-tr-3xl top-0 z-10 bg-lightDarkBlue max-w-screen-xl xl:px-20 xl:mx-auto">
         {/* if in the success/last page don't show the back button */}
         {!url.includes("/published") ? (
           <button
-            className=" hover:bg-[#f1f1f1] text-black rounded-md px-4 py-2 underline"
+            className=" hover:bg-[#f1f1f1] text-black rounded-full px-9 "
             onClick={() => {
               navigate(-1);
             }}
@@ -259,7 +259,7 @@ URL. */
         {url.includes("/published") ? (
           <a
             href={`/users/dashboard/${user?._id}/listing=true`}
-            className="text-lg text-white font-medium rounded-md px-9 py-3 disabled:bg-[#dddddd] disabled:cursor-not-allowed transition durtion-300 ease-in bg-[#222222] hover:bg-black"
+            className="text-lg text-white font-medium rounded-full px-9 py-3 disabled:bg-[#dddddd] disabled:cursor-not-allowed transition durtion-300 ease-in bg-[#222222] hover:bg-black"
           >
             See listing
           </a>
@@ -267,7 +267,7 @@ URL. */
           <>
             {/* on publish page showing a colored button */}
             <button
-              className={`text-lg text-white font-medium rounded-md px-9 py-3 disabled:bg-[#dddddd] disabled:cursor-not-allowed transition durtion-300 ease-in ${
+              className={`text-lg text-white font-medium rounded-full px-9 py-3 disabled:bg-[#dddddd] disabled:cursor-not-allowed transition durtion-300 ease-in ${
                 url?.includes("/receipt")
                   ? "bg-[#ff385c] hover:bg-[#d90b63]"
                   : "bg-[#222222] hover:bg-black"

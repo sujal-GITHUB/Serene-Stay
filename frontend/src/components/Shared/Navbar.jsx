@@ -152,7 +152,7 @@ const Navbar = () => {
                   {!inUserDashboard && (
                     <Link
                       to="/host/homes"
-                      className=" bg-[#ffffff] hover:bg-[#f0f0f0] transition-all rounded-full p-3 px-5 cursor-pointer mr-3 md:block hidden"
+                      className=" bg-[#ffffff] hover:bg-[#f0f0f0] transition-all rounded-xl p-3 px-5 cursor-pointer mr-3 md:block hidden"
                     >
                       <p className="text-sm font-medium text-[#222222]">
                         Host your Hotel

@@ -1,42 +1,41 @@
-  import React, { useState, useEffect } from "react";
-  import "./ToggleTheme.css";
+import React, { useState, useEffect } from "react";
+import "./ToggleTheme.css";
 
-  const ToggleTheme = () => {
-    const [isDay, setIsDay] = useState(false);
+const ToggleTheme = () => {
+  const [isDay, setIsDay] = useState(false);
 
-    // Function to toggle the theme
-    const toggleTheme = () => {
-      const newTheme = !isDay;
-      setIsDay(newTheme);
-      // Store the new theme in localStorage
-      localStorage.setItem("theme", newTheme ? "day" : "night");
-    };
+  // Function to toggle the theme
+  const toggleTheme = () => {
+    const newTheme = !isDay;
+    setIsDay(newTheme);
 
-    useEffect(() => {
-      // Retrieve the theme from localStorage when the component is mounted
-      const savedTheme = localStorage.getItem("theme");
-      
-      // If a theme is found in localStorage, set the theme based on it
-      if (savedTheme === "day") {
-        setIsDay(true);
-      } else {
-        setIsDay(false);
-      }
+    // Update the `html` class to toggle dark mode
+    document.documentElement.classList.toggle("dark", !newTheme);
 
-      // Update the `body` class when the theme changes
-      document.body.classList.toggle("light-mode", isDay);
-      document.body.classList.toggle("dark-mode", !isDay);
-    }, [isDay]);
-
-    return (
-      <div
-        className={`tdnn ${isDay ? "day" : ""} w-12 h-7`}
-        onClick={toggleTheme}
-        title="Toggle Theme"
-      >
-        <div className={`moon ${isDay ? "sun" : ""}`}></div>
-      </div>
-    );
+    // Store the new theme in localStorage
+    localStorage.setItem("theme", newTheme ? "day" : "night");
   };
 
-  export default ToggleTheme;
+  useEffect(() => {
+    // Retrieve the theme from localStorage when the component is mounted
+    const savedTheme = localStorage.getItem("theme");
+    const isDayTheme = savedTheme === "day";
+
+    setIsDay(isDayTheme);
+
+    // Ensure the `html` class reflects the saved theme
+    document.documentElement.classList.toggle("dark", !isDayTheme);
+  }, []);
+
+  return (
+    <div
+      className={`tdnn ${isDay ? "day" : "night"} w-12 h-7`}
+      onClick={toggleTheme}
+      title="Toggle Theme"
+    >
+      <div className={`icon ${isDay ? "sun" : "moon"}`}></div>
+    </div>
+  );
+};
+
+export default ToggleTheme;

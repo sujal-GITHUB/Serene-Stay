@@ -77,9 +77,9 @@ const Home = () => {
   }
 
   return (
-    <main className="max-w-screen-2xl xl:px-10 px-5 sm:px-16 mx-auto">
+    <main className="max-w-screen-2xl xl:px-10 px-5 sm:px-16 min-h-screen mx-auto">
       <section
-        className={` pt-8 grid md:grid-cols-12 gap-5 pb-5 bg-lightLightBlue dark:bg-darkLightBlue sticky top-16 z-30 ${
+        className={` pt-8 grid md:grid-cols-12 gap-5 pb-5 bg-lightLightBlue dark:bg-darkDarkBlue sticky top-16 z-30 ${
           hasScroll ? " shadow-none" : " shadow-none"
         }`}
       >
@@ -141,7 +141,7 @@ const Home = () => {
                       <Link
                         to={`/rooms/${listing?._id}`}
                         key={listing._id}
-                        className=" flex flex-col gap-3 rounded-xl w-[320px] md:w-[264px] mx-auto"
+                        className=" flex flex-col gap-3  rounded-xl w-[320px] md:w-[264px] mx-auto"
                       >
                         <ListingPreviewCard
                           listingData={listing}

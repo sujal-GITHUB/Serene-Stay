@@ -6,7 +6,7 @@ const ListingPreviewCard = ({ listingData, showBeforeTaxPrice }) => {
   const priceAfterTaxes = listingData?.basePrice + taxes;
   return (
     <>
-      <div className=" h-[310px] md:h-[277px] overflow-hidden rounded-xl">
+      <div className=" h-[310px] md:h-[277px] overflow-hidden  rounded-xl">
         <img
           src={listingData?.photos[0]}
           alt="Listing images"
@@ -15,20 +15,20 @@ const ListingPreviewCard = ({ listingData, showBeforeTaxPrice }) => {
       </div>
       <div className=" flex flex-row justify-between items-start w-full">
         {/* listings details */}
-        <div className=" flex flex-col gap-1">
-          <p className="text-sm text-[#222222] font-medium">
+        <div className=" flex flex-col items-start gap-1">
+          <p className="text-sm text-[#222222] dark:text-white font-medium">
             {listingData?.location?.city?.name},{" "}
             {listingData?.location?.country?.name}
           </p>
           {showBeforeTaxPrice && (
             <p className="text-sm text-[#717171]">
-              After tax ${priceAfterTaxes}{" "}
+              After tax ₹{priceAfterTaxes}{" "}
               <span className=" font-normal">night</span>
             </p>
           )}
-          <p className="text-sm text-[#222222] font-semibold">
-            ${listingData?.basePrice}{" "}
-            <span className=" font-normal">night</span>
+          <p className="text-sm text-[#222222] dark:text-white font-semibold">
+          ₹{listingData?.basePrice}{""}
+            <span className=" font-normal">/night</span>
           </p>
         </div>
         {/* ratings / new status */}

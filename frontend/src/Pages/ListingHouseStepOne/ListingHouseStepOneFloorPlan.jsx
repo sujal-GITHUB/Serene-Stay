@@ -48,14 +48,14 @@ const ListingHouseStepOneFloorPlan = () => {
   return (
     <section className=" flex flex-col gap-10 max-w-screen-md mx-auto my-6 min-h-[70dvh] 2xl:h-[80vh]">
       <div className=" flex flex-col gap-2">
-        <h1 className=" text-[#222222] text-xl sm:text-2xl md:text-[32px] font-medium">
-          Share some basics about your place
+        <h1 className=" text-[#222222] dark:text-gray-300 text-xl sm:text-2xl md:text-[32px] font-medium">
+        Tell us a little about your Hotel
         </h1>
         <p className="text-sm sm:text-base md:text-lg text-[#717171]">
-          You&apos;ll add more details later, like bed types
+        Feel free to add more details later
         </p>
       </div>
-      <div className=" flex flex-col gap-5 mt-5">
+      <div className=" flex flex-col gap-5 mt-20">
         <FloorPlanCard
           name={"Guests"}
           number={guestNumber}

@@ -11,7 +11,7 @@ export default {
         lightLightBlue: '#CAF0F8',  
         lightDarkBlue: '#00B4D8', 
         darkLightBlue: '#7AB2D3',
-        darkDarkBlue: '#4A628A'},
+        darkDarkBlue: '#000000'},
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },

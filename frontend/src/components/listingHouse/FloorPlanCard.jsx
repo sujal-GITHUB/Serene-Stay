@@ -4,7 +4,7 @@ import { BiMinus } from "react-icons/bi";
 
 const FloorPlanCard = ({ name, number, setNumber, filter }) => {
   return (
-    <div className=" flex flex-row justify-between items-center gap-10 text-[#222222]">
+    <div className=" flex flex-row justify-between items-center gap-10 text-[#222222] dark:text-gray-300">
       <p className={` ${filter ? " text-sm" : "text-lg"}`}>{name}</p>
       <div className=" flex flex-row gap-2 items-center text-base">
         <div
