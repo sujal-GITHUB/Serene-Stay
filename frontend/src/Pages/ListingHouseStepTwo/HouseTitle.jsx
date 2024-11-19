@@ -27,17 +27,16 @@ const HouseTitle = () => {
   return (
     <div className=" flex flex-col gap-10 max-w-screen-sm mx-auto my-6 min-h-[80vh]">
       <div className=" flex flex-col gap-3 md:gap-0">
-        <h1 className=" text-[#222222] text-[32px] font-medium">
-          Now, let&apos;s give your apartment a title
+        <h1 className=" text-[#222222] text-[32px] dark:text-gray-300 font-medium">
+          Now, give a title to your Hotel 
         </h1>
-        <p className="text-sm sm:text-base md:text-lg text-[#717171]">
-          Short titles work best. Have fun with it—you can always change it
-          later.
+        <p className="text-sm sm:text-base md:text-lg mt-2 text-[#717171]">
+        Keep it Short and Sweet! You Can Always Update It Later.
         </p>
       </div>
-      <div>
+      <div className="mt-20">
         <textarea
-          className=" w-full p-3 border-[#b0b0b0] border-[1.3px] rounded-md"
+          className=" w-full p-3 border-[#b0b0b0] bg-white dark:bg-[#172252] resize-none border-[1.3px] rounded-md"
           rows="6"
           autoComplete="off"
           {...register("profileDetailsAbout", { maxLength: 40 })}
@@ -47,7 +46,7 @@ const HouseTitle = () => {
             handleChange(event);
           }}
           onBlur={handleChange}
-          placeholder="Your house title"
+          placeholder="Add Title"
         ></textarea>
         <div className=" mt-2 mb-3">
           <p

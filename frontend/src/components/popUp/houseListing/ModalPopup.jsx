@@ -1,33 +1,26 @@
 const ModalPopup = () => {
   return (
     <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-      <form method="dialog" className="modal-box">
-        <h3 className="text-base font-medium text-[#222222]">
+      <form method="dialog" className="modal-box bg-gray-50 dark:bg-[#303030] ">
+        <h3 className="text-base font-medium text-[#222222] dark:text-gray-300">
           Security camera(s)
         </h3>
         <p className="py-4 text-sm text-[#717171]">
-          Hosts are required to disclose all security cameras and other
-          recording devices in their listings. Intentionally concealed recording
-          devices, or devices that observe the interior of bedrooms and
-          bathrooms, are prohibited.
+        Hosts must disclose the presence of all security cameras and recording devices in their listings. Concealing recording devices or using devices that monitor the interior of bedrooms or bathrooms is strictly prohibited.
         </p>
-        <h3 className="text-base font-medium text-[#222222]">Weapons</h3>
+        <h3 className="text-base font-medium text-[#222222] dark:text-gray-300">Sensors</h3>
         <p className="py-4 text-sm text-[#717171]">
-          All weapons at a listing must be properly disclosed, stored and
-          secured
+        All sensors at a listing must be properly disclosed, installed, and secured.
         </p>
-        <h3 className="text-base font-medium text-[#222222]">
-          Dangerous animals
+        <h3 className="text-base font-medium text-[#222222] dark:text-gray-300">
+          Emegency Exit
         </h3>
         <p className="py-4 text-sm text-[#717171]">
-          Hosts should not keep a potentially dangerous animal (one that’s
-          capable of causing serious harm to humans or other animals) in a
-          listing without properly disclosing its presence and securing it in a
-          safe and secure accommodation.
+        Hosts should ensure that emergency exits are clearly marked, accessible, and functional at all times, and should disclose their locations to guests for safety purposes.
         </p>
-        <div className="modal-action">
+        <div className="modal-action ">
           {/* if there is a button in form, it will close the modal */}
-          <button className="btn">Close</button>
+          <button className="btn dark:bg-zinc-400 dark:text-black ">Close</button>
         </div>
       </form>
     </dialog>

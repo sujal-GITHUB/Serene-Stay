@@ -1,4 +1,4 @@
-import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
+  import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 
 /* eslint-disable react/prop-types */
 const ListingTitle = ({ listingData }) => {

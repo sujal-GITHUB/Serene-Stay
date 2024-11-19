@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewHouse } from "../../redux/actions/houseActions";
 import { City, Country, State } from "country-state-city";
@@ -7,10 +7,25 @@ import Select from "react-select";
 const ListingHouseStepOneAddress = () => {
   const houseData = useSelector((state) => state.house);
   const dispatch = useDispatch();
-  
-  // Detect dark mode from the body class or any global state
-  const isDarkMode = document.body.classList.contains('dark'); // Assuming dark mode is applied via the 'dark' class
-  
+
+  // State to manage dark mode
+  const [isDarkMode, setIsDarkMode] = useState(
+    document.documentElement.classList.contains("dark")
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   // State to manage form data
   const [formData, setFormData] = useState({
     country: "",
@@ -48,9 +63,9 @@ const ListingHouseStepOneAddress = () => {
           Confirm your address
         </h1>
         <p className="text-sm sm:text-base md:text-lg text-[#717171]">
-        Your address will only be shared with guests once they’ve completed a reservation.
+          Your address will only be shared with guests once they’ve completed a reservation.
         </p>
-        <div className="flex flex-col gap-5 mt-5">
+        <div className="flex flex-col gap-5 mt-20">
           <Select
             options={Country.getAllCountries()}
             getOptionLabel={(options) => options["name"]}
@@ -60,21 +75,32 @@ const ListingHouseStepOneAddress = () => {
               setFormData({ ...formData, country: item });
             }}
             onBlur={handleStoreCardData}
-            placeholder="Country / Region?"
+            placeholder="Country"
             styles={{
               control: (provided) => ({
                 ...provided,
                 padding: "8px",
-                backgroundColor: isDarkMode ? "#303030" : "white",
+                backgroundColor: isDarkMode ? "#172252" : "white",
                 borderRadius: "8px",
               }),
-              option: (provided) => ({
+              menu: (provided) => ({
                 ...provided,
-                color: "black", // Text color for the options
+                backgroundColor: isDarkMode ? "#172252" : "white",
+              }),
+              option: (provided, state) => ({
+                ...provided,
+                backgroundColor: state.isFocused
+                  ? isDarkMode
+                    ? "#1e3a8a"
+                    : "#f0f0f0"
+                  : isDarkMode
+                  ? "#172252"
+                  : "white",
+                color: isDarkMode ? "white" : "black",
               }),
               singleValue: (provided) => ({
                 ...provided,
-                color: isDarkMode ? "white" : "black", // Change color based on theme
+                color: isDarkMode ? "white" : "black",
               }),
             }}
           />
@@ -87,21 +113,32 @@ const ListingHouseStepOneAddress = () => {
               setFormData({ ...formData, state: item });
             }}
             onBlur={handleStoreCardData}
-            placeholder="State / province / territory (if applicable)"
+            placeholder="State / Province / Territory"
             styles={{
               control: (provided) => ({
                 ...provided,
                 padding: "8px",
-                backgroundColor: isDarkMode ? "#303030" : "white", // Background color
+                backgroundColor: isDarkMode ? "#172252" : "white",
                 borderRadius: "8px",
               }),
-              option: (provided) => ({
+              menu: (provided) => ({
                 ...provided,
-                color: "black", // Text color for the options
+                backgroundColor: isDarkMode ? "#172252" : "white",
+              }),
+              option: (provided, state) => ({
+                ...provided,
+                backgroundColor: state.isFocused
+                  ? isDarkMode
+                    ? "#1e3a8a"
+                    : "#f0f0f0"
+                  : isDarkMode
+                  ? "#172252"
+                  : "white",
+                color: isDarkMode ? "white" : "black",
               }),
               singleValue: (provided) => ({
                 ...provided,
-                color: isDarkMode ? "white" : "black", // Change color based on theme
+                color: isDarkMode ? "white" : "black",
               }),
             }}
           />
@@ -117,21 +154,32 @@ const ListingHouseStepOneAddress = () => {
               setFormData({ ...formData, city: item });
             }}
             onBlur={handleStoreCardData}
-            placeholder="City / village (if applicable)"
+            placeholder="City / Village"
             styles={{
               control: (provided) => ({
                 ...provided,
                 padding: "8px",
-                backgroundColor: isDarkMode ? "#303030" : "white",
+                backgroundColor: isDarkMode ? "#172252" : "white",
                 borderRadius: "8px",
               }),
-              option: (provided) => ({
+              menu: (provided) => ({
                 ...provided,
-                color: "black", // Text color for the options
+                backgroundColor: isDarkMode ? "#172252" : "white",
+              }),
+              option: (provided, state) => ({
+                ...provided,
+                backgroundColor: state.isFocused
+                  ? isDarkMode
+                    ? "#1e3a8a"
+                    : "#f0f0f0"
+                  : isDarkMode
+                  ? "#172252"
+                  : "white",
+                color: isDarkMode ? "white" : "black",
               }),
               singleValue: (provided) => ({
                 ...provided,
-                color: isDarkMode ? "white" : "black", // Change color based on theme
+                color: isDarkMode ? "white" : "black",
               }),
             }}
           />
@@ -139,7 +187,7 @@ const ListingHouseStepOneAddress = () => {
             type="text"
             name="addressLineOne"
             placeholder="Address line 1"
-            className="input input-bordered w-full p-3 dark:bg-[#303030] bg-white rounded-md" // Background color for input
+            className="input input-bordered w-full p-3 dark:bg-[#172252] bg-white rounded-md"
             value={formData.addressLineOne}
             onChange={handleInputChange}
             onBlur={handleStoreCardData}
@@ -148,7 +196,7 @@ const ListingHouseStepOneAddress = () => {
             type="text"
             name="addressLineTwo"
             placeholder="Address line 2 (if applicable)"
-            className="input input-bordered w-full p-3 dark:bg-[#303030] bg-white rounded-md" // Background color for input
+            className="input input-bordered w-full p-3 dark:bg-[#172252] bg-white rounded-md"
             value={formData.addressLineTwo}
             onChange={handleInputChange}
             onBlur={handleStoreCardData}
@@ -157,7 +205,7 @@ const ListingHouseStepOneAddress = () => {
             type="number"
             name="postCode"
             placeholder="Pin code"
-            className="input input-bordered w-full p-3 dark:bg-[#303030] bg-white rounded-md" // Background color for input
+            className="input input-bordered w-full p-3 dark:bg-[#172252] bg-white rounded-md"
             value={formData.postCode}
             onChange={handleInputChange}
             onBlur={handleStoreCardData}

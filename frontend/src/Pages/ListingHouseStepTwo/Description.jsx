@@ -29,16 +29,16 @@ const Description = () => {
   return (
     <div className=" flex flex-col gap-8 max-w-screen-sm mx-auto my-6 min-h-[80vh]">
       <div>
-        <h1 className=" text-[#222222] text-xl sm:text-2xl md:text-[32px] font-medium">
-          Create your description
+        <h1 className=" text-[#222222] dark:text-gray-300 text-xl sm:text-2xl md:text-[32px] font-medium">
+        Write your description
         </h1>
-        <p className=" text-sm sm:text-base md:text-lg text-[#717171]">
-          Share what makes your place special.
+        <p className=" text-sm sm:text-base md:text-lg mt-2 mb-20 text-[#717171]">
+        Unleash the charm – what makes your place one of a kind?
         </p>
       </div>
       <div>
         <textarea
-          className=" w-full p-3 border-[#b0b0b0] border-[1.3px] rounded-md"
+          className=" w-full p-3 resize-none border-[#b0b0b0] bg-white dark:bg-[#172252] border-[1.3px] rounded-md"
           rows="9"
           autoComplete="off"
           {...register("profileDetailsAbout", { maxLength: 1600 })}
@@ -48,7 +48,7 @@ const Description = () => {
             handleChange(event);
           }}
           onBlur={handleChange}
-          placeholder="Write your house description here..."
+          placeholder="Write your description here..."
         ></textarea>
         <div className=" mt-2 mb-3">
           <p

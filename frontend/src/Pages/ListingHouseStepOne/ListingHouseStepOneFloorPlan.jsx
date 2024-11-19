@@ -62,28 +62,28 @@ const ListingHouseStepOneFloorPlan = () => {
           setNumber={setGuestNumber}
           filter={false}
         />
-        <hr className="bg-[#dddddd] my-2" />
+        <hr className="border-0 h-[1px] bg-gray-300 my-2" />
         <FloorPlanCard
           name={"Bedrooms"}
           number={bedroomsNumber}
           setNumber={setBedroomsNumber}
           filter={false}
         />
-        <hr className="bg-[#dddddd] my-2" />
+        <hr className="border-0 h-[1px] bg-gray-300 my-2" />
         <FloorPlanCard
           name={"Beds"}
           number={bedsNumber}
           setNumber={setBedsNumber}
           filter={false}
         />
-        <hr className="bg-[#dddddd] my-2" />
+        <hr className="border-0 h-[1px] bg-gray-300 my-2" />
         <FloorPlanCard
           name={"Bathrooms"}
           number={bathroomsNumber}
           setNumber={setBathroomsNumber}
           filter={false}
         />
-        <hr className="bg-[#dddddd] my-2" />
+        <hr className="border-0 h-[1px] bg-gray-300 my-2" />
       </div>
     </section>
   );

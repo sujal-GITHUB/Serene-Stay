@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo_dark.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../redux/actions/userActions";
+import toggle from "./ToggleTheme/ToggleTheme"
+import ToggleTheme from "./ToggleTheme/ToggleTheme";
 
 const ListingNavbar = () => {
   const user = useSelector((state) => state.user.userDetails);
@@ -41,6 +43,7 @@ const ListingNavbar = () => {
           <img src={logo} alt="Logo" className="w-20" />
         </Link>
         <div className=" flex flex-row items-center gap-5 text-sm text-[#222222] font-medium">
+          <ToggleTheme/>  
           <Link
             to={`/users/dashboard/${user?._id}/overview=true`}
             className=" border-[1.3px] border-[#dddddd] px-4 py-2 rounded-full hover:border-[#222222]"

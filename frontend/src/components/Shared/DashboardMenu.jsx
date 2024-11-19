@@ -95,7 +95,7 @@ const DashboardMenu = () => {
                 }`}
               >
                 <p
-                  className={` cursor-pointer p-2 text-sm whitespace-nowrap rounded-full hover:bg-[#f0f0f0] transition duration-300 ${
+                  className={` cursor-pointer p-2 whitespace-nowrap rounded-full text-md dark:text-black hover:bg-[#f0f0f0] transition duration-300 ${
                     activePage === item.id
                       ? "font-medium text-[#ffffff] hover:bg-white transition duration-200"
                       : " opacity-80"

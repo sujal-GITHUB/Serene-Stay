@@ -17,7 +17,7 @@ body {
 
 /* Dark Mode */
 html.dark body {
-  background-color: #000000 ; /* Dark mode background */
+  background-color: #000b2b ; /* Dark mode background */
   color: #E0E0E0; /* Dark mode text color */
 }
 

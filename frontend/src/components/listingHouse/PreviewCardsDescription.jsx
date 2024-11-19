@@ -4,15 +4,15 @@ import { LuEdit2 } from "react-icons/lu";
 const PreviewCardsDescription = () => {
   return (
     <div className=" flex flex-col gap-7">
-      <h3 className="text-[#222222] text-lg sm:text-[22px] font-medium">
-        What&apos;s next?
+      <h3 className="text-[#222222] text-lg sm:text-[22px] dark:text-zinc-400 font-semibold">
+      What's lurking around the corner?
       </h3>
       <div className=" flex flex-row justify-start gap-4">
         <div className=" w-10">
           <GoChecklist size={36} />
         </div>
         <div className=" flex flex-col gap-1">
-          <p className="text-base sm:text-lg font-medium text-[#222222]">
+          <p className="text-base sm:text-lg font-medium text-[#222222] dark:text-zinc-400">
             Confirm a few details and publish
           </p>
           <p className="text-xs sm:text-sm text-[#717171]">
@@ -25,8 +25,8 @@ const PreviewCardsDescription = () => {
         <div className=" w-10">
           <GoCalendar size={36} />
         </div>
-        <div className=" flex flex-col gap-1">
-          <p className="text-base sm:text-lg font-medium text-[#222222]">
+        <div className=" flex flex-col gap-1"> 
+          <p className="text-base sm:text-lg font-medium text-[#222222]  dark:text-zinc-400">
             Set up your calendar
           </p>
           <p className="text-xs sm:text-sm text-[#717171]">
@@ -40,7 +40,7 @@ const PreviewCardsDescription = () => {
           <LuEdit2 size={36} />
         </div>
         <div className=" flex flex-col gap-1">
-          <p className="text-base sm:text-lg font-medium text-[#222222]">
+          <p className="text-base sm:text-lg font-medium text-[#222222]  dark:text-zinc-400">
             Adjust your settings
           </p>
           <p className="text-xs sm:text-sm text-[#717171]">

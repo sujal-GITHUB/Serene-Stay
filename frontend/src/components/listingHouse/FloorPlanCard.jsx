@@ -4,11 +4,11 @@ import { BiMinus } from "react-icons/bi";
 
 const FloorPlanCard = ({ name, number, setNumber, filter }) => {
   return (
-    <div className=" flex flex-row justify-between items-center gap-10 text-[#222222] dark:text-gray-300">
+    <div className=" flex flex-row justify-between items-center gap-10 text-[#222222]  dark:text-gray-300">
       <p className={` ${filter ? " text-sm" : "text-lg"}`}>{name}</p>
       <div className=" flex flex-row gap-2 items-center text-base">
         <div
-          className={` p-2 rounded-full border border-[#dddddd] hover:border-[#717171] transition duration-200
+          className={` p-2 rounded-full border border-[#dddddd] hover:border-[#717171] dark:border-[#717171] dark:hover:border-[#dddddd] transition duration-200
           ${
             name === "Beds" && !filter && number < 2
               ? " opacity-40 cursor-not-allowed"
@@ -27,7 +27,7 @@ const FloorPlanCard = ({ name, number, setNumber, filter }) => {
         </div>
         <p className=" w-[20px] text-center">{number}</p>
         <div
-          className=" p-2 rounded-full border border-[#dddddd] hover:border-[#717171] cursor-pointer transition duration-200"
+          className=" p-2 rounded-full border border-[#dddddd] hover:border-[#717171] dark:border-[#717171] dark:hover:border-[#dddddd] cursor-pointer transition duration-200"
           onClick={() => {
             setNumber((prev) => prev + 1);
           }}

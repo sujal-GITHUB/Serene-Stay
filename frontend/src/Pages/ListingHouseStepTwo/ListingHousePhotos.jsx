@@ -10,13 +10,12 @@ const ListingHousePhotos = () => {
   return (
     <div className=" flex flex-col gap-20 max-w-screen-md mx-auto my-6 min-h-[70vh]">
       <div className="flex flex-col gap-3 md:gap-0">
-        <h1 className=" text-[#222222] text-2xl md:text-[32px] font-medium">
+        <h1 className=" text-[#222222] dark:text-gray-300 text-2xl md:text-[32px] font-medium">
           {/* cabin will be dynamic */}
           Add some photos of your cabin
         </h1>
-        <p className="text-base md:text-lg text-[#717171]">
-          You&apos;ll need 5 photos to get started. You can add more or make
-          changes later.
+        <p className="text-base md:text-lg mt-5 text-[#717171] mb-10">
+        You'll need at least 3 photos to get started. Don't worry you can add more photos or edit them later.
         </p>
       </div>
       <PhotosCard />
@@ -27,7 +26,7 @@ const ListingHousePhotos = () => {
           : photos?.map((photo, i) => {
               return (
                 <div key={i}>
-                  <img src={photo} alt="Houses" className="border shadow-md" />
+                  <img src={photo} alt="Houses" className="border-2 border-black dark:border-gray-300 rounded-xl shadow-md" />
                 </div>
               );
             })}
