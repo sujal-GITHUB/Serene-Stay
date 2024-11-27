@@ -34,6 +34,7 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
+    "stripe": "^17.3.1",
     "styled-components": "^6.1.13",
     "twind": "^0.16.19"
   },

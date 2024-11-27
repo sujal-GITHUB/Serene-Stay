@@ -3,7 +3,7 @@ const ListingDescriptionPopup = ({ description }) => {
   return (
     <>
       <dialog id="listing_modal" className="modal">
-        <div className="modal-box w-11/12 max-w-4xl">
+        <div className="modal-box w-11/12 max-w-4xl bg-white text-black text-start dark:bg-[#172252] dark:text-gray-300">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute left-4 top-6">

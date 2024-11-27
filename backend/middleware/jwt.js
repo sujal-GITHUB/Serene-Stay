@@ -1,21 +1,31 @@
 const jwt = require("jsonwebtoken");
-require('dotenv').config() 
+require("dotenv").config();
 
 exports.verifyJwtToken = async (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader ? authHeader.split(' ')[1] : null;
-    // console.log(token, "LINE 7 JWT");
+    const authHeader = req.headers["authorization"];
+    const token = authHeader ? authHeader.split(" ")[1] : null;
 
+    // Check if token is provided
     if (!token) {
-        return res.send("Invalid Token");
+        return res.status(401).json({ message: "Access denied. No token provided." });
     }
+
     try {
+        // Verify token
         let decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-        console.log(decoded);
-        req.user = decoded._id;
+        req.user = decoded._id; // Attach user ID to request
         next();
     } catch (error) {
-        console.error(error);
-        return res.status(401).send("Access denied. Invalid token.");
+        console.error("JWT verification error:", error); // Log error for debugging
+
+        if (error.name === "TokenExpiredError") {
+            // Handle token expiration
+            return res.status(401).json({
+                message: "Token expired. Please refresh your token.",
+                error: "TokenExpired",
+            });
+        }
+
+        return res.status(401).json({ message: "Access denied. Invalid token." });
     }
 };

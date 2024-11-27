@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
-import motelLogo from "../assets/basicIcon/motel-logo.png";
+import logo_light from "../assets/logo_light.png";
+import logo_dark from "../assets/logo_dark.png";
 import { useEffect, useState } from "react";
 import { FadeLoader } from "react-spinners";
 import api from "../backend";
@@ -68,25 +69,33 @@ const PaymentConfirmed = () => {
     );
   }
   return (
-    <div className=" min-w-md mx-auto text-center">
+    <div className=" min-w-md mx-auto text-center min-h-screen">
       <div className="flex flex-col gap-4">
-        <div className="px-8 pt-1 bg-[#fafafa] h-[60vh]">
-          <div className=" flex flex-col gap-3 justify-center items-center max-w-[35vw] pt-6 text-[#222222] mx-auto">
-            <img src={motelLogo} alt="Motel Logo" className=" w-10" />
-            <h4 className=" text-2xl font-semibold">
+        <div className="px-8 pt-1 h-[60vh]">
+          <div className=" flex flex-col gap-3 justify-center items-center max-w-[35vw] pt-6 text-[#222222] dark:text-gray-300 mx-auto">
+          <img
+            src={logo_light}
+            alt="Serene Stay Logo"
+            className="block dark:hidden mb-5"
+          />
+          <img
+            src={logo_dark}
+            alt="Serene Stay Logo"
+            className="hidden dark:block mb-5"
+          />
+            <h4 className=" text-5xl font-semibold min-w-max">
               {paymentFailed
                 ? "Your payment failed. Try again."
                 : "Your payment is confirmed."}
             </h4>
-            <p className=" text-center text-sm">
-              Discover new places to stay and unique experiences around the
-              world.
+            <p className=" text-center text-xl min-w-max dark:text-gray-500 mb-5">
+            Explore unique stays and unforgettable experiences across the globe.  
             </p>
           </div>
           <div className=" px-5 mt-5 max-w-[180px] flex justify-center mx-auto">
             <Link
               to={"/"}
-              className=" bg-[#282828] text-[#ffffff] text-center font-medium block w-full py-2 rounded-md hover:bg-[#000000] transition-colors duration-300"
+              className=" bg-[#172252] text-[#ffffff] text-center font-medium block w-full py-2 rounded-md hover:bg-[#283c92] transition-colors duration-300"
             >
               Continue
             </Link>

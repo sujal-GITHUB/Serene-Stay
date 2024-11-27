@@ -14,7 +14,7 @@ const HouseHostingDetails = ({ setLatAndLong }) => {
   const [typeOfRoom, setTypeOfRoom] = useState("Entire place");
 
   // calculating per night earning
-  const perNightEarnig = parseInt(perNight * 37);
+  const perNightEarnig = parseInt(perNight * 500);
 
   const handlePerNightChange = (e) => {
     setPerNightChange(e.target.value);
@@ -34,12 +34,12 @@ const HouseHostingDetails = ({ setLatAndLong }) => {
       <div className=" flex flex-col gap-3 md:gap-5 md:mx-6">
         {/* heading */}
         <div className=" flex flex-col gap-2 text-[#222222] font-medium text-2xl md:text-5xl text-center">
-          <h1 className=" text-[#ff385c]"> Motel it.</h1>
-          <h1>You could earn</h1>
+          <h1 className=" text-black dark:text-gray-300 font-semibold"> With Serene Stay</h1>
+          <h1 className="text-gray-500 text-l">You could earn</h1>
         </div>
         {/* amount in $ */}
-        <p className=" text-center text-[#222222] font-semibold text-3xl my-2 md:text-7xl md:my-4">
-          ${perNightEarnig}
+        <p className=" text-center text-[#222222] dark:text-gray-300 font-semibold text-2xl my-2 md:text-7xl md:my-4">
+        ₹{perNightEarnig}
         </p>
         {/* description of earning */}
 
@@ -49,7 +49,7 @@ const HouseHostingDetails = ({ setLatAndLong }) => {
               <span className=" font-medium underline underline-offset-3">
                 {perNight} nights
               </span>
-              <span> at an estimated $37 a night</span>
+              <span> at an estimated ₹500 a night</span>
             </>
           )}
         </div>
@@ -77,7 +77,7 @@ const HouseHostingDetails = ({ setLatAndLong }) => {
         </div>
         {/* how pricing is defined */}
         <p className=" text-xs md:text-sm text-[#717171] underline font-medium text-center">
-          Learn how we estimates you earnings
+          How we estimates your earnings
         </p>
         {/* selected places */}
         <div

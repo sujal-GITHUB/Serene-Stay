@@ -10,6 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useGetSubCatListing } from "../hooks/useGetSubCatListing";
 import SkeletonLoadingCards from "../components/skeletonLoading/SkeletonLoadingCards";
 import { FadeLoader } from "react-spinners";
+import cover from "../assets/cover.jpg"
 
 const Home = () => {
   const [hasScroll, setHasScroll] = useState(false);
@@ -93,6 +94,20 @@ const Home = () => {
           setShowBeforeTaxPrice={setShowBeforeTaxPrice}
         />
       </section>
+      <div className="relative w-full h-[350px] md:h-[450px] lg:h-[550px] mb-16">
+        <img className="rounded-xl object-cover w-full h-full" src={cover} alt="Serene Stay" />
+        
+        {/* Text at the top of the image */}
+        <div className="absolute top-[20%] left-0 right-0 flex items-center justify-center text-lightLightBlue font-semibold text-5xl sm:text-5xl md:text-6  xl lg:text-7xl p-4">
+          Serene Stay
+        </div>
+        
+        {/* Text at the bottom of the image */}
+        <div className="absolute bottom-[48%] left-0 right-0 flex items-center justify-center text-lightLightBlue font-medium text-xl sm:text-xl md:text-2xl lg:text-3xl p-4">
+          Where Comfort Meets Tranquility
+        </div>
+      </div>
+
       {/* house listing data section */}
       {/* if sub cat listing data is loading else */}
       {isLoading ? (

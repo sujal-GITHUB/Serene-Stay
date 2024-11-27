@@ -67,7 +67,7 @@ const Book = () => {
   }
 
   return (
-    <main className=" max-w-screen-2xl xl:px-12 mx-auto py-7 xl:py-20">
+    <main className=" max-w-screen-2xl min-h-screen xl:px-12 mx-auto py-7 xl:py-20">
       {stripePromise && clientSecret && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <div className=" flex flex-row gap-3 items-center px-3 md:px-5">
@@ -79,7 +79,7 @@ const Book = () => {
             >
               <MdKeyboardArrowLeft size={28} />
             </div>
-            <h2 className="text-lg sm:text-xl md:text-[32px] text-[#222222] font-medium text-center">
+            <h2 className="text-lg sm:text-xl md:text-[32px] text-[#222222] dark:text-gray-300 font-medium text-center">
               Confirm and pay
             </h2>
           </div>

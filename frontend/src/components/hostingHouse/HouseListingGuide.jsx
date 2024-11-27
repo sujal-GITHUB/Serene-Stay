@@ -1,14 +1,15 @@
 import bgImage from "../../assets/setupPic.png";
 import SetupCard from "./SetupCard";
+import iphone from "../../assets/iphone.jpg"
 
 const HouseListingGuide = () => {
   return (
     <section className=" my-8 md:my-20 flex flex-col gap-10">
-      <h1 className=" text-2xl md:text-4xl text-[#222222] font-medium text-center">
-        Motel it easily with Motel Setup
+      <h1 className=" text-2xl md:text-4xl text-[#222222] dark:text-gray-300 font-medium text-center">
+        Easily set up with Serene Stay
       </h1>
       <>
-        <img src={bgImage} alt="background" />
+        <img className="rounded-xl h-1/2" src={iphone} alt="background" />
       </>
       <div className=" grid grid-cols-1 lg:grid-cols-3 gap-8">
         <SetupCard
