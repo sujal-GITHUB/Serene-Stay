@@ -2,7 +2,7 @@
 
 SereneStay is an AI-powered hotel booking platform designed to enhance the traditional booking experience by offering personalized recommendations, direct negotiation capabilities, and scalable data processing. The platform enables users to discover, compare, and book accommodations that best suit their preferences through intelligent analytics and an intuitive user interface.
 
-## 🚀 Features
+## Features
 
 - **AI-Driven Recommendation Engine**  
   Utilizes Apache Mahout to suggest personalized hotel options based on user preferences, behavior, and history.
@@ -19,7 +19,7 @@ SereneStay is an AI-powered hotel booking platform designed to enhance the tradi
 - **Responsive, Modern UI**  
   Built with ReactJS and TailwindCSS for a responsive and engaging front-end experience.
 
-## 🧱 Architecture
+## Architecture
 
 ### Frontend
 - **ReactJS**
@@ -39,7 +39,7 @@ SereneStay is an AI-powered hotel booking platform designed to enhance the tradi
 - **Hadoop** for distributed data processing
 
 
-## 📊 Future Enhancements
+## Future Enhancements
 
 - Integration with live hotel APIs for real-time availability and pricing  
 - Sentiment analysis on hotel reviews using NLP  
@@ -47,11 +47,11 @@ SereneStay is an AI-powered hotel booking platform designed to enhance the tradi
 - Admin panel for hotel owners  
 - Export options (PDF invoices, CSV reports)
 
-## 🛡️ License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [React](https://reactjs.org/)
 - [Node.js](https://nodejs.org/)
